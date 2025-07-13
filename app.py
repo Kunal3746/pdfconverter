@@ -89,12 +89,14 @@ def create_pdf_with_hindi_support(text, output_path):
         
         # Define styles
         styles = getSampleStyleSheet()
+
+        pdfmetrics.registerFont(TTFont('KrutiDev110', 'fonts/KrutiDev110.ttf'))
         
         # Create custom style for Hindi text
         hindi_style = ParagraphStyle(
             'HindiStyle',
             parent=styles['Normal'],
-            fontName='Helvetica',
+            fontName='KrutiDev110',
             fontSize=12,
             leading=14,
             alignment=TA_LEFT,
