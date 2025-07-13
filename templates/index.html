@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCX to PDF Converter - Hindi Support</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-word"></i> DOCX to PDF Converter</h1>
+            <p>Convert your Word documents to PDF format with Hindi language support</p>
+            <div class="features">
+                <span class="feature-badge"><i class="fas fa-language"></i> Hindi Support</span>
+                <span class="feature-badge"><i class="fas fa-font"></i> Kruti Dev 110</span>
+                <span class="feature-badge"><i class="fas fa-shield-alt"></i> Secure</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload your DOCX file</h3>
+                        <p>Drag and drop your .docx file here or click to browse</p>
+                        <p class="hindi-info">Supports Hindi text with Kruti Dev 110 fonts</p>
+                        <input type="file" id="fileInput" accept=".docx" hidden>
+                        <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-folder-open"></i> Browse Files
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <i class="fas fa-file-word"></i>
+                        <span id="fileName"></span>
+                        <span id="fileSize"></span>
+                    </div>
+                    <button class="convert-btn" id="convertBtn">
+                        <i class="fas fa-magic"></i> Convert to PDF (Hindi Support)
+                    </button>
+                </div>
+            </div>
+
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Processing your document...</p>
+                    <p class="hindi-processing">Extracting Hindi text and generating PDF</p>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Conversion Complete!</h3>
+                    <p>Your PDF with Hindi text is ready for download</p>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button class="new-file-btn" onclick="resetForm()">
+                        <i class="fas fa-plus"></i> Convert Another File
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Conversion Failed</h3>
+                    <p id="errorText"></p>
+                    <button class="try-again-btn" onclick="resetForm()">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Features</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-language"></i>
+                        <h4>Hindi Language Support</h4>
+                        <p>Full support for Hindi text with proper Unicode rendering</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-font"></i>
+                        <h4>Kruti Dev 110 Support</h4>
+                        <p>Handles Kruti Dev 110 fonts and converts to proper Unicode</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Clean PDF Output</h4>
+                        <p>Generates professional PDFs with proper Hindi text formatting</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Secure Processing</h4>
+                        <p>Files are automatically deleted after processing for privacy</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 DOCX to PDF Converter with Hindi Support. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
